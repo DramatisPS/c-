@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+#define MAXN 10
+
+double f( int n, double a[], double x );
+
+int main()
+{
+    int n, i;
+    double a[MAXN], x;
+
+    scanf("%d %lf", &n, &x);
+    for ( i=0; i<=n; i++ )
+        scanf("%lf", &a[i]);
+    printf("%.1f\n", f(n, a, x));
+    
+	return 0;
+}
+
+/* 你的代码将被嵌在这里 */
+
+double f( int n, double a[], double x ){
+	int i;
+	
+	long double outcome=a[0],leap=1;
+	
+	for(i=1;i<=n;i++){
+		
+		leap=leap*x; 	
+		
+		outcome+=a[i]*leap;
+	}
+	
+	return outcome;
+}
+
+/*double f ( int n, double a[ ], double x ){
+    int i;                                          
+    double t= 1;
+    double sum = a[ 0 ];//妙啊，把第一项直接定义掉，不循环处理
+	for ( i = 1; i <= n; i++ ){
+		t= t * x;//这个是x的i次
+		sum += t* a[ i ];//
+ 	}    //用一个i控制两个循环，厉害。
+	return sum;
+	}*/
