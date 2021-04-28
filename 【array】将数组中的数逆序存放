@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+#define EPS 0.00001
+
+int main(){
+	int a[11],N;
+	
+	int i;
+	
+	scanf("%d\n",&N);
+	
+	for(i=1;i<=N;i++){  //正向输入
+		scanf("%d",&a[i]);
+	}
+		
+	for(i=N;i>=1;i--){  //逆向输出
+		printf("%d",a[i]);
+		if(i==1) break;   //为了实现输出时最后一个没有空格
+		printf(" ");
+	}
+	
+	
+	return 0;
+}
