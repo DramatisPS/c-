@@ -1,0 +1,36 @@
+#include <stdio.h>
+//本题要求计算并输出不超过n的最大的k个素数以及它们的和。 
+
+int prime(int num){//判断素数我自己定义的函数
+	int flag=1;
+	for(int i=2;i<(num-1);i++){
+		if(num%i==0)  {
+			
+			flag=0;
+			break;
+		}
+	}
+	return flag;
+} 
+int main(){               //主函数
+	int num,n,sum=0,k=0;   //num就是题目说的n，sum记录k个素数的和
+	
+	scanf("%d %d",&num,&n);
+	
+	for(int i=num;i>1;i--){//因为是不超过num的素数，所以从后往前找合适
+		
+		if(prime(i))  {   //if函数确定Prime 控制k的大小
+			k++;
+			sum+=i;
+			printf("%d",i);  //输出一个i
+	
+		if(k==n||i==2){
+			printf("=%d",sum);
+			break;
+		}else{
+			printf("+");    //输出+号
+		}
+}
+	}
+	return 0;
+}
