@@ -1,6 +1,5 @@
 #include <stdio.h>
 //本题要求计算并输出不超过n的最大的k个素数以及它们的和。 
-
 int prime(int num){//判断素数我自己定义的函数
 	int flag=1;
 	for(int i=2;i<(num-1);i++){
